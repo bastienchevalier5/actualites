@@ -1,42 +1,43 @@
 <?php
 include "PDO.php";
-$sql = 'SELECT * FROM actualités ORDER BY publication LIMIT 5';
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+$sql = 'SELECT * FROM actualités WHERE id ='.$id;
 $temp = $pdo->query($sql);
+$resultats = $temp->fetch();
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceuil</title>
+    <title>Actualité</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <?php
-        include("header.php");
+        include "header.php";
         ?>
     </header>
     <main>
         <?php
-        while ($resultats = $temp -> fetch()) {
-        echo "<a class='lien_actu' href='actualite.php?id=".$resultats['id']."'>";
-        echo "<div class='carte_actu'>";
-        echo "<h3>".$resultats['titre']."</h3>";
+        echo "<div class='detail'>";
+        echo "<h2>".$resultats['titre']."</h2>";
         echo "<img src='".$resultats['image']."' alt='image' title='image'>";
+        echo "<p>".$resultats["contenu"]."</p>";
         echo "<p>Date de publication : ".$resultats['publication']."</p>";
         echo "<p>Date de modification : ".$resultats["modification"]."</p>";
         echo "<p>Auteur : ".$resultats["auteur"]."</p>";
         echo "<p>Tags : ".$resultats["tag"]."</p>";
+        echo "<a href='https://imgupscaler.com/fr'>".$resultats["source"]."</a>";
         echo "</div>";
-        echo "</a>";
-        }
         ?>
     </main>
     <footer>
         <?php
-        include("footer.php");
+        include "footer.php";
         ?>
     </footer>
 </body>
