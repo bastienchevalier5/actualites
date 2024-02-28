@@ -33,7 +33,7 @@ include "PDO.php";
             $mail = $_POST['mail'];
             $sql = "INSERT INTO contact (nom, prenom, mail) VALUES ('$nom', '$prenom', '$mail')";
             $pdo->exec($sql);
-            echo '<h3 class="enregistrement">Vos informations ont bien été enregistrés</h3>';
+            header("Location: index.php?message=informations_enregistrees");
         }
         ?>
     </main>

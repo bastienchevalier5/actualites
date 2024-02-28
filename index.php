@@ -2,6 +2,9 @@
 include "PDO.php";
 $sql = 'SELECT * FROM actualités ORDER BY publication LIMIT 5';
 $temp = $pdo->query($sql);
+if(isset($_GET['message']) && $_GET['message'] == "informations_enregistrees") {
+    echo "<h3 class='validation'>Vos informations ont été enregistrées avec succès.</h3>";
+}
 ?>
 
 <!DOCTYPE html>
