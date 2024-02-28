@@ -1,4 +1,4 @@
-header{
+header,footer{
     background-color: #231F20;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -9,12 +9,12 @@ header img{
 }
 
 .menu a{
-                width: 130px;
+                width: 200px;
                 height: 40px;
                 color: #fff;
                 border-radius: 5px;
-                padding: 25px 25px;
                 font-family: 'Lato', sans-serif;
+                margin-right: 15px;
                 
 }
 header h1{
@@ -27,7 +27,6 @@ header h1{
     margin-top: 75px;
     text-align: center;
     grid-column: 3;
-    float: right;
 }
 img{
     width: 200px;
@@ -41,4 +40,8 @@ img{
     width: 350px;
     margin: 0 auto;
     margin-top: 25px;
+}
+iframe{
+    width: 200px;
+    height: 200px;
 }
