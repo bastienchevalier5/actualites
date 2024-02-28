@@ -1,0 +1,44 @@
+header{
+    background-color: #231F20;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+header img{
+    grid-column: 1;
+}
+
+.menu a{
+                width: 130px;
+                height: 40px;
+                color: #fff;
+                border-radius: 5px;
+                padding: 25px 25px;
+                font-family: 'Lato', sans-serif;
+                
+}
+header h1{
+    margin-top: 75px;
+    text-align: center;
+    color: white;
+    grid-column: 2;
+}
+.menu{
+    margin-top: 75px;
+    text-align: center;
+    grid-column: 3;
+    float: right;
+}
+img{
+    width: 200px;
+
+}
+.carte_actu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
