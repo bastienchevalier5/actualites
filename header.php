@@ -1,4 +1,4 @@
-    <img src="logo.png" alt="logo" title="logo">
+    <a href="index.php"><img src="logo.png" alt="logo" title="logo"></a>
     <h1>ActuWorld</h1>
     <div class="menu">
         <a href="index.php">Acceuil</a>
