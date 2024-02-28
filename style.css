@@ -67,6 +67,9 @@ iframe{
     margin-top: 25px;
     margin-bottom: 25px;
 }
+.contact input{
+    width: 200px;
+}
 .contact h2,label,input,button{
     margin-top: 25px;
     margin-bottom: 25px;
