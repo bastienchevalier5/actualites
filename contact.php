@@ -1,14 +1,5 @@
 <?php
 include "PDO.php";
-if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["mail"])) {
-$prenom = $_POST['prenom'];
-$nom = $_POST['nom'];
-$mail = $_POST['mail'];
-
-
-$sql = "INSERT INTO contact (nom, prenom, mail) VALUES ('$nom', '$prenom', '$mail')";
-$pdo->exec($sql);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +26,16 @@ $pdo->exec($sql);
             <input name="mail" type="email">
             <button type="submit">Envoyer</button>
         </form>
+        <?php
+        if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["mail"])) {
+            $prenom = $_POST['prenom'];
+            $nom = $_POST['nom'];
+            $mail = $_POST['mail'];
+            $sql = "INSERT INTO contact (nom, prenom, mail) VALUES ('$nom', '$prenom', '$mail')";
+            $pdo->exec($sql);
+            echo '<h3 class="enregistrement">Vos informations ont bien été enregistrés</h3>';
+        }
+        ?>
     </main>
     <footer>
         <?php
