@@ -1,6 +1,6 @@
 <?php
 $host = "127.0.0.1";
-$db = "site_actualités";
+$db = "site_actualités"; //les accents c'est pas cool
 $user = "root";
 $pass = "";
 $port = 3306;

@@ -12,7 +12,7 @@ include "PDO.php";
 <body>
     <header>
         <?php
-        include("header.php");
+        include("header.php");//les parenthese sont plus trop obligatoires dans les includes
         ?>
     </header>
     <main>
@@ -27,7 +27,7 @@ include "PDO.php";
             <button type="submit">Envoyer</button>
         </form>
         <?php
-        if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["mail"])) {
+        if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["mail"])) {// tu peux mettre toutes les variables dans 1 isset()
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
             $mail = $_POST['mail'];
@@ -39,7 +39,7 @@ include "PDO.php";
     </main>
     <footer>
         <?php
-        include("footer.php");
+        include("footer.php");//les parenthese sont plus trop obligatoires dans les includes
         ?>
     </footer>
 </body>

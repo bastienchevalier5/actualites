@@ -18,7 +18,7 @@ if(isset($_GET['message']) && $_GET['message'] == "informations_enregistrees") {
 <body>
     <header>
         <?php
-        include("header.php");
+        include("header.php");//les parenthese sont plus trop obligatoires dans les includes
         ?>
     </header>
     <main>
@@ -39,7 +39,7 @@ if(isset($_GET['message']) && $_GET['message'] == "informations_enregistrees") {
     </main>
     <footer>
         <?php
-        include("footer.php");
+        include("footer.php");//les parenthese sont plus trop obligatoires dans les includes
         ?>
     </footer>
 </body>
