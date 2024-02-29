@@ -26,7 +26,7 @@ include "PDO.php";
             <input name="mail" type="email">
             <button type="submit">Envoyer</button>
         </form>
-        <?php
+        <?php   // vulnerabilities pour le sql injection
         if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["mail"])) {// tu peux mettre toutes les variables dans 1 isset()
             $prenom = $_POST['prenom'];
             $nom = $_POST['nom'];
