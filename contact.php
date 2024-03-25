@@ -1,5 +1,29 @@
 <?php
 include "PDO.php";
+
+class Contact
+{
+    public $nom;
+    public $prenom;
+    public $mail;
+
+    public function __construct(string $nom, string $prenom, string $mail){
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->mail = $mail;
+    }
+
+    public function getNom() :string{
+        return $this->nom;
+    }
+
+    public function getPrenom() :string{
+        return $this->prenom;
+    }
+    public function getMail() :string{
+        return $this->mail;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,9 +52,10 @@ include "PDO.php";
         </form>
         <?php
         if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["mail"])) {
-            $prenom = $_POST['prenom'];
-            $nom = $_POST['nom'];
-            $mail = $_POST['mail'];
+            $contact = new Contact($_POST['nom'], $_POST['prenom'], $_POST['mail']);
+            $prenom = $contact->getPrenom();
+            $nom = $contact->getNom();
+            $mail = $contact->getMail();
             $sql = "INSERT INTO contact (nom, prenom, mail) VALUES ('$nom', '$prenom', '$mail')";
             $pdo->exec($sql);
             header("Location: index.php?message=informations_enregistrees");

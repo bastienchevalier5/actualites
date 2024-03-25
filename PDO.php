@@ -1,10 +1,11 @@
 <?php
-$host = "127.0.0.1";
-$db = "site_actualités";
-$user = "root";
-$pass = "";
-$port = 3306;
-$charset = "utf8mb4";
+class connect extends PDO {
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset;port=$port";
-$pdo = new PDO($dsn, $user, $pass);
+
+    public static function getPdo(){
+        $pdo = new connect("mysql:host=127.0.0.1;dbname=site_actualités;charset=utf8mb4;port=3306", "root");
+        return $pdo;
+    }
+}
+
+

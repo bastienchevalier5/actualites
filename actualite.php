@@ -1,11 +1,5 @@
 <?php
 include "PDO.php";
-if (isset($_GET["id"])) {
-    $id = $_GET["id"];
-$sql = 'SELECT * FROM actualités WHERE id ='.$id;
-$temp = $pdo->query($sql);
-$resultats = $temp->fetch();
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,16 +17,29 @@ $resultats = $temp->fetch();
     </header>
     <main>
         <?php
-        echo "<div class='detail'>";
-        echo "<h2>".$resultats['titre']."</h2>";
-        echo "<img src='".$resultats['image']."' alt='image' title='image'>";
-        echo "<p>".$resultats["contenu"]."</p>";
-        echo "<p>Date de publication : ".$resultats['publication']."</p>";
-        echo "<p>Date de modification : ".$resultats["modification"]."</p>";
-        echo "<p>Auteur : ".$resultats["auteur"]."</p>";
-        echo "<p>Tags : ".$resultats["tag"]."</p>";
-        echo "<a href='https://imgupscaler.com/fr'>".$resultats["source"]."</a>";
-        echo "</div>";
+        if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+}
+
+require_once "classactu.php";
+
+// Fetch the actualité based on the provided ID
+$actualite = Actualite::actu($id);
+
+if ($actualite) {
+    // Display the actualité details
+    echo "<div class='carte_actu'>";
+    echo "<h2>" . $actualite->getTitre() . "</h2>";
+    echo "<img src='" . $actualite->getImage() . "'>";
+    echo "<p>".$actualite->getContenu()."</p>";
+    echo "<p>Publié le: " . $actualite->getPublication() . "</p>";
+    echo "<p>Modifié le: " . $actualite->getModification() . "</p>";
+    echo "<p> Auteur: " . $actualite->getAuteur() . "</p>";
+    echo "<p>Tag: " . $actualite->getTag() . "</p>";
+    echo "<p>Source: " . $actualite->getSource() . "</p>";
+    echo "</div>";
+}
+
         ?>
     </main>
     <footer>
