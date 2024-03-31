@@ -1,0 +1,136 @@
+body{
+    margin: 0;
+}
+main{
+    min-height: 450px;
+}
+header,footer{
+    background-color: #231F20;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+footer{
+    color: white;
+}
+header img{
+    grid-column: 1;
+}
+
+.menu a{
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    margin-right: 15px;
+    text-decoration: none;
+                
+}
+.menu-footer{
+    align-content: center;
+    color: white;
+}
+.menu-footer a{
+    width: 186px;
+    height: 40px;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    margin-right: 15px;
+    text-decoration: none;
+    color: white;
+}
+header h1{
+    margin-top: 75px;
+    text-align: center;
+    color: white;
+    grid-column: 2;
+}
+.menu{
+    display: flex;
+    margin-top: 75px;
+    text-align: center;
+    grid-column: 3;
+    color: white;
+}
+.menu ul{
+    flex-direction: row;
+}
+.menu label{
+    font-size: large;
+}
+img{
+    width: 200px;
+
+}
+.carte_actu{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgrey;
+    border: 2px solid black;
+    width: 350px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.lien_actu{
+    text-decoration: none;
+    color: black;
+}
+iframe{
+    width: 200px;
+    height: 200px;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgrey;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.contact input{
+    width: 200px;
+}
+.contact h2,label,input,button{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.detail{
+    text-align: center;
+    max-width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 25px;
+    background-color: lightgrey;
+    border: 2px solid black;
+}
+.detail img{
+    float: left;
+    margin-right: 50px;
+    margin-left: 25px;
+}
+.validation{
+    text-align: center;
+}
+table{
+    text-align: center;
+    width: 50%;
+}
+table,tr,td,th,thead,tbody{
+    border: 1px solid;
+}
+table{
+    
+    margin: 2em;
+}
+.editsupp{
+    width: 10%;
+}
+form{
+    margin: 2em;
+}
